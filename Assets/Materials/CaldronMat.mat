@@ -38,6 +38,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _SampleTexture2D_209fdc708cce4b1383967404b20b9a7c_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 68afa3d37048fdb4fac761924e644032, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -53,13 +57,19 @@ Material:
     m_Ints: []
     m_Floats:
     - _Emmission: 0.8
-    - _NoisePower: 2.72
-    - _NoiseScale: 22.23
+    - _NoisePower: 6.17
+    - _NoiseScale: 10.1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Rotation: 2.53
     - _VoronoiSpeed: 0.05
+    - _alpha: 0.523
     m_Colors:
-    - _EmissionColor: {r: 0.9433962, g: 0.4227483, b: 0.65445507, a: 0}
+    - _Col1: {r: 0.6132076, g: 0.13511352, b: 0, a: 0}
+    - _Col2: {r: 0.509434, g: 0.39649343, b: 0.46557292, a: 0}
+    - _EdgeBlur: {r: 0.03, g: 0.1, b: 0, a: 0}
+    - _EmissionColor: {r: 0.20692417, g: 0.5849056, b: 0.41505897, a: 0}
+    - _EmissionColor1: {r: 0.9339623, g: 0.33756176, b: 0, a: 0}
+    - _EmissionColor2: {r: 0.39493206, g: 0.14404595, b: 0.7830189, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

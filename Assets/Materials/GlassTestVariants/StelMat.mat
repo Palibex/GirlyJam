@@ -71,13 +71,13 @@ Material:
     - _CategoryFactor_1: 0.393
     - _DisortStrenght: 3
     - _DisortStrength: 0.01
-    - _Displace1Height: 0.84
-    - _Displace1Pow: 7.3
-    - _Displace2Height: -0.04
+    - _Displace1Height: -0.13
+    - _Displace1Pow: 9.47
+    - _Displace2Height: 0.69
     - _Displace2Pow: 7.8
     - _DistortionOnTexture: 0.578
     - _GlassThickness: 0.15
-    - _LiquidHeight: 0.466
+    - _LiquidHeight: 0.599
     - _Metalic: 0.246
     - _Metallic: 1
     - _NormalStrenght: 0.01
@@ -91,7 +91,7 @@ Material:
     - _Smoothness: 0.928
     - _Strenght: 0.12
     - _Tiling: 0.01
-    - _TopHeight: 1
+    - _TopHeight: 0.911
     - _TopSmoothness: 0.068
     - _TopWidth: 0.467
     m_Colors:
