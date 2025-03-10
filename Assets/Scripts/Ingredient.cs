@@ -9,6 +9,8 @@ public class Ingredient : MonoBehaviour
     private CameraPhases phaseScript;
     private GameObject caldron;
     public Vector3 startPos;
+    public Transform centerIngredients;
+    public float maxRadiusIngredients = 5f;
     public GameObject[] slots;
     public float distanceToSnap = 3f;
     
@@ -36,14 +38,14 @@ public class Ingredient : MonoBehaviour
         
         if (phaseScript.phase == 1)
         {
-            if (dragAndDropScript.isDragged == true)
+            if (dragAndDropScript.isDragged)
             {
                 targetSlot = null;
             }
             foreach (GameObject slot in slots)
             {
                 float distance = Vector3.Distance(transform.position, slot.transform.position);
-                if (distance < distanceToSnap && !slot.GetComponent<Slot>().full)
+                if (distance < distanceToSnap && !slot.GetComponent<Slot>().full && !dragAndDropScript.isDragged)
                 {
                     targetSlot = slot.transform;
                 }
@@ -82,6 +84,9 @@ public class Ingredient : MonoBehaviour
             transform.GetChild(0).GetComponent<Renderer>().enabled = true;
         }
 
+        ComeBack();
+        
+
 
 
         //Scale and yPos
@@ -114,6 +119,16 @@ public class Ingredient : MonoBehaviour
         else
         {
             mat.SetFloat("_OutlineThickness", 1);
+        }
+    }
+
+    void ComeBack()
+    {
+        // Come Back if too far
+        float distance = Vector3.Distance(transform.position, centerIngredients.position);
+        if (distance > maxRadiusIngredients && !dragAndDropScript.isDragged && !onSlot)
+        {
+            transform.position = Vector3.Lerp(transform.position, centerIngredients.position, Time.deltaTime * 7f);
         }
     }
 

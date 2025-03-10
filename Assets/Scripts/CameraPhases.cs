@@ -69,6 +69,9 @@ public class CameraPhases : MonoBehaviour
         
 
 
+        
+
+
         //Detect Full Slots
         int fullCount = 0;
         
@@ -179,7 +182,11 @@ public class CameraPhases : MonoBehaviour
     {
         CheckWin();
 
-        scoreText.text = score.ToString();
+        lettreScript.intro = false;
+        lettreScript.zoom = true;
+        
+
+        scoreText.text = "Score : " + score.ToString();
         
         cuilléScript.progression = 0;
         foreach ( GameObject ingredient in ingredients)

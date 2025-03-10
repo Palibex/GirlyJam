@@ -4,6 +4,7 @@ public class Button : MonoBehaviour
 {
     public bool active;
     public CameraPhases phaseScript;
+    public int belongingPhase;
     public int targetPhase;
     public bool reset;
     public bool potionDiscard;
@@ -30,11 +31,17 @@ public class Button : MonoBehaviour
             GetComponent<Renderer>().enabled = false;
             GetComponent<Collider>().enabled = false;
         }
+
+        if (!closeLettre && phaseScript.phase != belongingPhase)
+        {
+            GetComponent<Renderer>().enabled = false;
+            GetComponent<Collider>().enabled = false;
+        }
     }
 
     void OnMouseDown()
     {
-        // Calculate the offset between object and mouse position
+        
         if (active)
         {
             if (!closeLettre)

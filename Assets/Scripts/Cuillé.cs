@@ -7,7 +7,7 @@ public class Cuillé : MonoBehaviour
     public Vector3 offset;     // Offset from the center
     public float lerpSpeed = 2f;
     public Transform skin;
-    public Vector3 center;
+    public Transform center;
 
 
     public Vector3 lastPos;
@@ -17,10 +17,7 @@ public class Cuillé : MonoBehaviour
     //Reset
     public 
 
-    void Start()
-    {
-        center = transform.position;
-    }
+    
     
     void Update()
     {
@@ -30,7 +27,7 @@ public class Cuillé : MonoBehaviour
         Vector3 targetPosition = transform.position;
 
         // Constrain the position within the allowed circle
-        transform.position = ConstrainToCircle(targetPosition, center, range) + offset;
+        transform.position = ConstrainToCircle(targetPosition, center.position, range) + offset;
         skin.position = Vector3.Lerp(skin.position, transform.position, Time.deltaTime * lerpSpeed);
 
         getSpeed();
@@ -60,8 +57,8 @@ public class Cuillé : MonoBehaviour
 
     void getSpeed()
     {
-        float distance = Vector3.Distance(transform.position, lastPos);
-        lastPos = transform.position;
+        float distance = Vector3.Distance(skin.position, lastPos);
+        lastPos = skin.position;
         speed = distance;
     }
 }

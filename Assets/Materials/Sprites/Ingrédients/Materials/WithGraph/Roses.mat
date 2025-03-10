@@ -64,7 +64,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Rotation: 0
-    - _zoom: 1
+    - _zoom: 0.9
     m_Colors:
     - _OutlineColor: {r: 0.3490566, g: 0.18252182, b: 0.10702208, a: 1}
   m_BuildTextureStacks: []

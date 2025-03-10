@@ -8,9 +8,10 @@ public class Lettre : MonoBehaviour
     [Range (0,10)]
     public int consigneID;
 
+    public string textIntro;
+    public bool intro = true;
     public string[] consignes;
     public Vector3[] targetFactors;
-    public string currentText;
     public Vector3 currentTargetFactor;
 
     public TextMeshPro tmpText; 
@@ -21,6 +22,8 @@ public class Lettre : MonoBehaviour
     void Start()
     {
         phaseScript = GameObject.Find("Main Camera").GetComponent<CameraPhases>();
+        zoom = true;
+        
         
     }
 
@@ -39,10 +42,35 @@ public class Lettre : MonoBehaviour
         }
 
         //Update Text and Objective
-        currentText = consignes[consigneID];
-        currentTargetFactor = targetFactors[consigneID];
 
-        tmpText.text = currentText;
+        if (intro)
+        {
+            tmpText.text = textIntro;
+        }
+
+        else
+        {
+            tmpText.text = consignes[consigneID];
+            currentTargetFactor = targetFactors[consigneID];
+    
+            
+        }
+
+        //OutLine
+
+        
+        Material mat = GetComponent<Renderer>().material;
+        float sineValue = Mathf.Sin(Time.time *3) * 0.05f;
+        
+        
+        if (!zoom && phaseScript.phase != 3)
+        {
+            mat.SetFloat("_OutlineThickness", 0.9f  + sineValue);
+        }
+        else
+        {
+            mat.SetFloat("_OutlineThickness", 1);
+        }
 
 
     }
